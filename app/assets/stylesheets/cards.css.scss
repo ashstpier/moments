@@ -1,0 +1,12 @@
+.cards {
+  @include outer-container($container-width);
+}
+
+.card {
+  @include span-columns(4);
+  @include omega(3n);
+  background: #3B8686;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+}

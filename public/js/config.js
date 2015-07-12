@@ -13,6 +13,7 @@ System.config({
   "map": {
     "angular": "github:angular/bower-angular@1.4.2",
     "angular-animate": "github:angular/bower-angular-animate@1.4.2",
+    "angular-resource": "github:angular/bower-angular-resource@1.4.2",
     "angular-ui-router": "github:angular-ui/ui-router@0.2.15",
     "jquery": "github:components/jquery@2.1.4",
     "traceur": "github:jmcriffey/bower-traceur@0.0.88",

@@ -12,6 +12,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bower-rails'
 gem 'haml'
 gem 'bourbon'
+gem 'neat'
 
 group :development, :test do
   gem 'byebug'

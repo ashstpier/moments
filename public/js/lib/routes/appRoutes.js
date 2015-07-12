@@ -1,10 +1,10 @@
 var AppRoutes = ($stateProvider, $urlRouterProvider, $locationProvider) => {
 
   $stateProvider
-    .state('home', {
+    .state('cards', {
       url: '/',
-      templateUrl: 'templates/home.html',
-      controller: 'homeController'
+      templateUrl: 'templates/cards.html',
+      controller: 'cardsController'
     });
 
   $urlRouterProvider.otherwise('/');
