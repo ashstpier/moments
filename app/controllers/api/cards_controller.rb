@@ -13,6 +13,10 @@ class Api::CardsController < ApplicationController
     render nothing: true, status: 204
   end
 
+  def show
+    render json: Card.find(params[:id])
+  end
+
   def safe_params
     params.require(:card).permit(:name, :location, :date, :description)
   end

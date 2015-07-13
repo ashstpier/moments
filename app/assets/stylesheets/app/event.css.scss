@@ -1,0 +1,29 @@
+.event {
+
+}
+
+.event-header {
+  background: #ccc;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 260px;
+}
+
+.event-body {
+  @include outer-container($container-width);
+  padding: 30px 0;
+}
+
+.event-description {
+  @include span-columns(8);
+  @include shift(2);
+
+  h1 {
+    font-size: em(48);
+  }
+  p {
+    font-size: em(18);
+  }
+}

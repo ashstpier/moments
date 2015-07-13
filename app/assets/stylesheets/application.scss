@@ -1,8 +1,10 @@
-@import url(http://fonts.googleapis.com/css?family=Merriweather:400,300,700);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,400italic|Noto+Serif:400,700);
 
 @import 'bourbon';
 @import 'neat';
+@import 'normalize';
 @import 'variables';
 @import 'default';
 
-@import 'cards';
+@import 'app/cards';
+@import 'app/event';

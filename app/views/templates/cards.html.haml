@@ -1,3 +1,18 @@
-.cards
-  .card{'ng-repeat' => 'card in cards'}
-    %h3 {{card.name}}
+.card-list
+  .card-list-item{'ng-repeat' => 'card in cards'}
+
+    .card{'ui-sref' => 'card({id: card.id})', style: "background-image: url(https://download.unsplash.com/photo-1429547584745-d8bec594c82e)"}
+      .card-wrapper
+        .card-content
+          .card-label
+            .name {{card.name}}
+            .date
+              {{card.date | date: 'd MMM yy'}}
+
+          .card-meta
+            .likes
+              %i.fa.fa-heart-o
+              25
+            .friends
+              %i.fa.fa-user
+              6

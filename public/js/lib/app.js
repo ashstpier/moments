@@ -20,6 +20,10 @@ app.config(AppRoutes);
 
 // Controllers
 
+import NavController from './controllers/navController'
 import CardsController from './controllers/cardsController'
+import EventController from './controllers/eventController'
 
+app.controller("navController", NavController);
 app.controller("cardsController", CardsController);
+app.controller("eventController", EventController);

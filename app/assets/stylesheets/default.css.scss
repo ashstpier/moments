@@ -1,3 +1,14 @@
 body {
   font-family: $body-font;
+  font-size: $basefont;
+  color: $black;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font;
+}
+
+p {
+  line-height: 1.8;
+  color: $grey;
 }
