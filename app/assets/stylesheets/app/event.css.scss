@@ -8,7 +8,15 @@
   background-position: center center;
   background-repeat: no-repeat;
   width: 100%;
-  min-height: 260px;
+  min-height: 200px;
+  .event-date {
+    @include outer-container($container-width);
+    font-size: em(32);
+    color: #fff;
+    font-weight: bold;
+    font-family: $heading-font;
+    text-align: center;
+  }
 }
 
 .event-body {

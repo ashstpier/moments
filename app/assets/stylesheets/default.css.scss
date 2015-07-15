@@ -1,14 +1,16 @@
 body {
   font-family: $body-font;
-  font-size: $basefont;
+  font-size: $basefont + px;
   color: $black;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $heading-font;
+  font-weight: 400;
 }
 
 p {
   line-height: 1.8;
-  color: $grey;
+  color: $black;
+  font-weight: 300;
 }

@@ -9,8 +9,8 @@ var AppRoutes = ($stateProvider, $urlRouterProvider, $locationProvider) => {
           controller: 'navController'
         },
         "page": {
-          templateUrl: 'templates/cards.html',
-          controller: 'cardsController'
+          templateUrl: 'templates/cards_index.html',
+          controller: 'cardsIndexController'
         }
       }
     })
@@ -22,8 +22,8 @@ var AppRoutes = ($stateProvider, $urlRouterProvider, $locationProvider) => {
           controller: 'navController'
         },
         "page": {
-          templateUrl: 'templates/event.html',
-          controller: 'eventController'
+          templateUrl: 'templates/cards_show.html',
+          controller: 'cardsShowController'
         }
       }
     });

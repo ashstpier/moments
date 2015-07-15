@@ -1,0 +1,10 @@
+.event
+  .event-header{style: "background-image: url(#{image_url('dummy.jpg')})"}
+    .event-date
+      {{event.date | date: 'd MMM yy'}}
+
+  .event-body
+    .event-description
+      %h1 {{event.name}}
+      %p {{event.description}}
+
