@@ -5,6 +5,7 @@
 @import 'normalize';
 @import 'variables';
 @import 'default';
+@import 'typography';
 
-@import 'app/cards';
-@import 'app/event';
+@import 'views/cards';
+@import 'views/event';
