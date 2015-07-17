@@ -1,6 +1,7 @@
 class CardsController < ApplicationController
+
   def index
-    @cards = Card.all.sort_by(&:date)
+    @cards = Card.all.sort_by(&:date).reverse
   end
 
   def show
@@ -47,7 +48,8 @@ class CardsController < ApplicationController
       :name,
       :description,
       :date,
-      :location
+      :location,
+      :cover_image
     )
   end
 end

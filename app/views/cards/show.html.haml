@@ -1,7 +1,8 @@
 .event
-  .event-header{style: "background-image: url(#{image_url('dummy.jpg')})"}
-    .event-date
-      = @event.formatted_date
+  .event-header{style: "background-image: url(#{image_url(@event.cover_image)})"}
+    .event-header-content
+      .event-date
+        = @event.formatted_date
   .event-body
     .event-description
       %h1= @event.name

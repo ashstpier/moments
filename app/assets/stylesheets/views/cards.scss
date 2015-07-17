@@ -1,21 +1,21 @@
 .card-list {
-  @include outer-container($container-width);
-  overflow: auto;
-  white-space: nowrap;
+  @include outer-container(910px);
+  // overflow: auto;
+  // white-space: nowrap;
 }
 
 .card-list-item {
   display: inline-block;
-  margin-right: 20px;
+  margin: 0 10px;
 }
 
 .card {
   color: #555;
   border-radius: 5px;
   overflow: hidden;
-  height: 480px;
-  width: 320px;
-  margin: 20px 0;
+  height: 460px;
+  width: 280px;
+  margin: 10px 0;
   position: relative;
   background: #ccc;
   background-position: center center;
@@ -44,6 +44,8 @@
         line-height: 1em;
         font-weight: 400;
         margin-bottom: 8px;
+        word-wrap: break-word;
+        text-transform: capitalize;
       }
       .date {
         font-size: em(14);
@@ -61,43 +63,5 @@
         margin-right: 3px;
       }
     }
-  }
-}
-
-.event {
-
-}
-
-.event-header {
-  background: #ccc;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  width: 100%;
-  min-height: 200px;
-  .event-date {
-    @include outer-container($container-width);
-    font-size: em(32);
-    color: #fff;
-    font-weight: bold;
-    font-family: $heading-font;
-    text-align: center;
-  }
-}
-
-.event-body {
-  @include outer-container($container-width);
-  padding: 30px 0;
-}
-
-.event-description {
-  @include span-columns(8);
-  @include shift(2);
-
-  h1 {
-    font-size: em(48);
-  }
-  p {
-    font-size: em(18);
   }
 }

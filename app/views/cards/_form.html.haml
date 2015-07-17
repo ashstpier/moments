@@ -1,10 +1,7 @@
-= form_for @card do |f|
-  = f.label :name
-  = f.text_field :name
-  = f.label :description
-  = f.text_area :description
-  = f.label :date
-  = f.text_field :date
-  = f.label :location
-  = f.text_field :location
+= simple_form_for @card do |f|
+  = f.input :name, error: 'Please give your event a name'
+  = f.input :description, error: 'Please add a description of the event'
+  = f.input :date, error: 'Please specify the date of the event'
+  = f.input :location, error: 'Please add the location of the event'
+  = f.input :cover_image, :as => :cover_image, error: 'Upload a cover image for your event'
   = f.submit

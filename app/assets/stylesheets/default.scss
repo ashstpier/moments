@@ -2,4 +2,9 @@ body {
   font-family: $body-font;
   font-size: $basefont + px;
   color: $black;
+  background: #f9f9f9;
+}
+.wrapper {
+  @include outer-container($container-width);
+  padding: 100px 0;
 }

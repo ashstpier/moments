@@ -15,6 +15,10 @@ gem 'haml'
 gem 'bourbon'
 gem 'neat'
 
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'simple_form'
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
