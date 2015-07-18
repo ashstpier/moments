@@ -14,6 +14,7 @@ gem 'bower-rails'
 gem 'haml'
 gem 'bourbon'
 gem 'neat'
+gem 'mapbox-rails'
 
 gem 'carrierwave'
 gem 'mini_magick'

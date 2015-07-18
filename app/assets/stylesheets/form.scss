@@ -1,0 +1,20 @@
+input {
+  display: block;
+}
+input[type="text"] {
+  border: 1px solid $light-grey;
+  padding: 12px 10px;
+  border-radius: 3px;
+  outline: none;
+  width: 100%;
+  display: block;
+}
+label {
+  display: block;
+  font-family: $heading-font;
+  margin-bottom: 5px;
+}
+
+.thumbnail {
+  max-width: 200px;
+}

@@ -6,6 +6,7 @@ class CardsController < ApplicationController
 
   def show
     @event = Card.find(params[:id])
+    render :layout => 'event'
   end
 
   def new

@@ -5,9 +5,10 @@ nav {
   right: 0;
   width: 100%;
   z-index: 99;
-  background: rgba(#fff, 0.95);
-  height: 70px;
+  background: rgba(#fff, 0.97);
+  height: 65px;
   padding: 0 20px;
+  border-bottom: 1px solid $light-grey;
   .brand {
     float: left;
     a {
@@ -15,7 +16,7 @@ nav {
       font-family: $heading-font;
       font-size: em(24);
       font-weight: bold;
-      line-height: 70px;
+      line-height: 65px;
       text-decoration: none;
     }
   }
@@ -29,7 +30,7 @@ nav {
       a {
         display: block;
         padding: 0 20px;
-        margin: 15px 0;
+        margin: 12px 0;
         font-weight: bold;
         text-transform: uppercase;
         letter-spacing: 0.2em;
@@ -39,7 +40,7 @@ nav {
         line-height: 40px;
         &:hover {
           .fa {
-            @include transform(rotate(180deg) scale(1.1));
+            @include transform(scale(1.2));
           }
         }
         .fa {
