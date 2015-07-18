@@ -11,19 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150716110214) do
+ActiveRecord::Schema.define(version: 20150718200927) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "cards", force: :cascade do |t|
     t.string   "name"
-    t.string   "location"
-    t.string   "description"
-    t.datetime "date"
+    t.text     "description"
+    t.date     "date"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "cover_image"
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string   "name"
+    t.float    "lat"
+    t.float    "lng"
+    t.integer  "card_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

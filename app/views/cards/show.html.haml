@@ -8,7 +8,8 @@
 
     %p= @event.description
 
-#map
+- unless @event.locations.empty?
+  #map{:data => {:lat => @event.locations.first.lat, :lng => @event.locations.first.lng, :name => @event.locations.first.name}}
 
 .event-body
 

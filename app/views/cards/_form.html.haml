@@ -3,6 +3,9 @@
     = f.input :name, error: 'Please give your event a name'
     = f.input :description, error: 'Please add a description of the event'
     = f.input :date, error: 'Please specify the date of the event'
-    = f.input :location, error: 'Please add the location of the event'
+    = f.simple_fields_for :locations do |l|
+      = l.input :name
+      = l.input :lat
+      = l.input :lng
     = f.input :cover_image, :as => :cover_image, error: 'Upload a cover image for your event'
     = f.submit "save", :class => 'btn'

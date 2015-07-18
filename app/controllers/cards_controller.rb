@@ -11,10 +11,14 @@ class CardsController < ApplicationController
 
   def new
     @card = Card.new
+    @card.locations.build
   end
 
   def edit
     @card = Card.find(params[:id])
+    if @card.locations.empty?
+      @card.locations.build
+    end
   end
 
   def create
@@ -49,8 +53,15 @@ class CardsController < ApplicationController
       :name,
       :description,
       :date,
-      :location,
-      :cover_image
+      :lat,
+      :lng,
+      :cover_image,
+      locations_attributes: [
+        :id,
+        :name,
+        :lat,
+        :lng
+      ]
     )
   end
 end

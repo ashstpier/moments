@@ -1,10 +1,12 @@
 class Card < ActiveRecord::Base
+  has_many :locations
 
   validates :name, presence: true
   validates :date, presence: true
   validates :description, presence: true
-  validates :location, presence: true
   validates :cover_image, presence: true
+
+  accepts_nested_attributes_for :locations
 
   mount_uploader :cover_image, CardImageUploader
 

@@ -1,13 +1,31 @@
+.form-wrapper {
+  @include span-columns(8);
+  @include shift(2);
+}
 input {
   display: block;
 }
-input[type="text"] {
-  border: 1px solid $light-grey;
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+  border: 1px solid #ddd;
   padding: 12px 10px;
   border-radius: 3px;
   outline: none;
   width: 100%;
   display: block;
+}
+select {
+  display: inline-block;
+  width: auto;
+  background: #fff;
+}
+textarea {
+  min-height: 200px;
+}
+select {
+  -webkit-appearance: none;
 }
 label {
   display: block;

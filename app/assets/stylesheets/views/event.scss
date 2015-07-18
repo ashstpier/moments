@@ -12,11 +12,10 @@
     width: 100%;
     @include outer-container($container-width);
     .event-date {
-
       @include span-columns(8);
       @include shift(2);
       font-size: em(72);
-      color: #fff;
+      color: #fcfcfc;
       font-weight: bold;
       font-family: $heading-font;
       position: absolute;
