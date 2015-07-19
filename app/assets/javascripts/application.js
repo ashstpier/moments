@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require datetimepicker
+//= require headroom
+//= require headroomJquery
 //= require_tree .
