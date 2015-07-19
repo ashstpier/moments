@@ -20,6 +20,10 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'simple_form'
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-datetimepicker'
+end
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'

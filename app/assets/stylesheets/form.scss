@@ -16,6 +16,9 @@ select {
   width: 100%;
   display: block;
 }
+input[type="submit"]{
+  margin-top: 20px;
+}
 select {
   display: inline-block;
   width: auto;
@@ -31,8 +34,15 @@ label {
   display: block;
   font-family: $heading-font;
   margin-bottom: 5px;
+  margin-top: 20px;
 }
 
 .thumbnail {
   max-width: 200px;
+}
+
+.error {
+  color: #ff0000;
+  padding: 10px 0 0;
+  display: inline-block;
 }

@@ -1,10 +1,10 @@
 class Card < ActiveRecord::Base
   has_many :locations
 
-  validates :name, presence: true
+  validates :name, presence: {:message => "Please provide a name for your event" }
   validates :date, presence: true
-  validates :description, presence: true
-  validates :cover_image, presence: true
+  validates :description, presence: {:message => "Please provide a description for your event" }
+  validates :cover_image, presence: {:message => "Upload a cover image for your event" }
 
   accepts_nested_attributes_for :locations
 
