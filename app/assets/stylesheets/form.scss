@@ -2,11 +2,10 @@
   @include span-columns(8);
   @include shift(2);
 }
-input {
-  display: block;
-}
 input[type="text"],
 input[type="number"],
+input[type="password"],
+input[type="email"],
 textarea,
 select {
   border: 1px solid #ddd;
@@ -15,6 +14,9 @@ select {
   outline: none;
   width: 100%;
   display: block;
+}
+input[type="checkbox"]{
+  margin-right: 10px;
 }
 input[type="submit"]{
   margin-top: 20px;

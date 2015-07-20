@@ -15,3 +15,14 @@ body {
   @include outer-container($container-width);
   padding: 100px 0;
 }
+
+.auth-form {
+  @include span-columns(8);
+  @include shift(2);
+}
+.auth-buttons {
+  padding: 20px 0;
+  a {
+    display: inline-block;
+  }
+}

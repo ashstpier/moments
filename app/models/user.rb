@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
   attr_accessor :login
 
+  has_many :cards
+
   validates :username, :presence => true,
     :uniqueness => {
       :case_sensitive => false
@@ -19,5 +21,9 @@ class User < ActiveRecord::Base
       conditions[:email].downcase! if conditions[:email]
       where(conditions.to_hash).first
     end
+  end
+
+  def to_param
+    self.username
   end
 end

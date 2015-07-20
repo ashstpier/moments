@@ -1,9 +1,9 @@
-- if current_user
+- if user_signed_in?
   #menu
     .menu-content
       %ul
         %li
-          = link_to cards_path do
+          = link_to current_user do
             %i.fa.fa-user.fa-fw
             = current_user.username
         %li

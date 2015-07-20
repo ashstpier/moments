@@ -6,9 +6,10 @@
   height: 100%;
   width: $menu-width;
   z-index: 99999;
-  background: #333;
+  background: darken(#556270, 20%);
   font-family: $heading-font;
   overflow: auto;
+  box-shadow: inset 2px 0 20px rgba(0,0,0,0.5);
   @include transform(translateX(100%));
   .menu-content {
     ul {

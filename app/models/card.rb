@@ -1,4 +1,5 @@
 class Card < ActiveRecord::Base
+  belongs_to :user
   has_many :locations
 
   validates :name, presence: {:message => "Please provide a name for your event" }

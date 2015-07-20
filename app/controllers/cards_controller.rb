@@ -1,4 +1,5 @@
 class CardsController < ApplicationController
+  before_action :get_user
 
   def index
     @cards = Card.all.sort_by(&:date).reverse
@@ -9,7 +10,7 @@ class CardsController < ApplicationController
   end
 
   def new
-    @card = Card.new
+    @card = Card.new(date: Date.today.to_s)
     @card.locations.build
   end
 
@@ -24,6 +25,7 @@ class CardsController < ApplicationController
     @card = Card.new(card_params)
 
     if @card.save
+      @user.cards << @card
       redirect_to cards_path
     else
       render :new
@@ -46,6 +48,10 @@ class CardsController < ApplicationController
   end
 
   private
+
+  def get_user
+    @user = current_user
+  end
 
   def card_params
     params.require(:card).permit(
