@@ -1,7 +1,15 @@
 .card-list {
   @include outer-container(910px);
+  margin-bottom: 50px;
   // overflow: auto;
   // white-space: nowrap;
+}
+
+.date-title {
+  font-size: em(72);
+  font-weight: bold;
+  margin: 0 0 50px;
+  text-align: center;
 }
 
 .card-list-item {
@@ -31,7 +39,7 @@
   }
 
   .card-wrapper {
-    background: rgba($secondary, 0.4);
+    background: rgba(darken($secondary, 5%), 0.4);
     height: 100%;
     @include transition(background 250ms $ease-out);
   }
@@ -47,7 +55,7 @@
       margin-bottom: 30px;
       font-family: $heading-font;
       .name {
-        font-size: em(36);
+        font-size: em(40);
         line-height: 1em;
         font-weight: 400;
         margin-bottom: 8px;
@@ -64,10 +72,10 @@
       font-family: $heading-font;
       .likes, .friends {
         float: left;
-        margin-right: 30px;
+        margin-right: 20px;
       }
       i {
-        margin-right: 3px;
+        margin-right: 1px;
         color: $primary;
       }
     }

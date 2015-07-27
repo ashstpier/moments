@@ -1,2 +1,6 @@
 .wrapper
+  %h1.date-title 2015
   = render partial: 'partials/card_list', :locals => { cards: @user.cards }
+  %h1.date-title 2014
+  = render partial: 'partials/card_list', :locals => { cards: @user.cards }
+

@@ -4,7 +4,7 @@ ready = ->
     $('body').toggleClass('menu-open')
 
   $("#nav").headroom({
-    offset : 50
+    offset : 200
   });
 
 $(document).ready(ready)

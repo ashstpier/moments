@@ -5,20 +5,22 @@ nav#nav {
   right: 0;
   width: 100%;
   z-index: 9999;
-  background: rgba(#fff, 0.97);
+  background: rgba(#fff, 0.95);
   height: 65px;
   padding: 0 20px;
   border-bottom: 1px solid $light-grey;
   .brand {
     float: left;
     a {
-      letter-spacing: 0.1em;
+      letter-spacing: 0.05em;
       font-family: $heading-font;
       font-size: em(24);
       font-weight: bold;
       line-height: 65px;
       text-decoration: none;
-      color: $primary;
+      img {
+        width: 100px;
+      }
     }
   }
   ul {
@@ -40,6 +42,7 @@ nav#nav {
         text-decoration: none;
         line-height: 40px;
         color: $secondary;
+        @include transition(color 300ms $ease-out);
         &:hover {
           color: $primary;
         }
@@ -47,7 +50,7 @@ nav#nav {
           width: 12px;
           height: 13px;
           margin-right: 3px;
-          @include transition(color 300ms $ease-out);
+
         }
       }
     }
@@ -55,7 +58,7 @@ nav#nav {
 }
 
 .headroom {
-    transition: transform 200ms linear;
+    transition: transform 500ms linear;
 }
 .headroom--pinned {
     transform: translateY(0%);

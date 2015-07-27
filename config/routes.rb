@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
-  root 'cards#index'
+  authenticated :user do
+    root :to => 'cards#index', as: :authenticated_root
+  end
+
+  root :to => 'home#index'
+
   devise_for :users
   get '/users/:id', :to => 'users#show', :as => :user
 
