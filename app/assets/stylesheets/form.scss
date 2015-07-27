@@ -1,6 +1,6 @@
 .form-wrapper {
-  @include span-columns(8);
-  @include shift(2);
+  @include outer-container($small-container);
+  padding: 100px 20px;
 }
 input[type="text"],
 input[type="number"],

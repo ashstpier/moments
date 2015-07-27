@@ -1,0 +1,18 @@
+.card-list
+  - cards.each do |card|
+    .card-list-item
+      = link_to card_path(card) do
+        .card{style: "background-image: url(#{image_url(card.cover_image)})"}
+          .card-wrapper
+            .card-content
+              .card-label
+                .name= card.name
+                .date= card.formatted_date
+
+              .card-meta
+                .likes
+                  %i.fa.fa-heart
+                  25
+                .friends
+                  %i.fa.fa-user
+                  6

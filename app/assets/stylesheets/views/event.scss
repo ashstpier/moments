@@ -10,17 +10,15 @@
     position: relative;
     height: 100%;
     width: 100%;
-    @include outer-container($container-width);
+    @include outer-container($small-container);
     .event-date {
-      @include span-columns(8);
-      @include shift(2);
       font-size: em(72);
       color: #fcfcfc;
       font-weight: bold;
       font-family: $heading-font;
       position: absolute;
       bottom: 0;
-      left: 0;
+      left: 20px;
       line-height: 48px;
       text-transform: uppercase;
       // text-align: right;
@@ -31,20 +29,17 @@
 }
 
 .event-body {
-  @include outer-container($container-width);
-  padding: 60px 0;
+  @include outer-container($small-container);
+  padding: 60px 20px;
 }
 
 .event-description {
-  @include span-columns(8);
-  @include shift(2);
-
   h1 {
     font-size: em(60);
     margin-bottom: 25px;
     line-height: 1em;
   }
   p {
-    font-size: em(18);
+    font-size: em(20);
   }
 }

@@ -11,13 +11,13 @@ class CardsController < ApplicationController
 
   def new
     @card = Card.new(date: Date.today.to_s)
-    @card.locations.build
+    @card.build_location
   end
 
   def edit
     @card = Card.find(params[:id])
-    if @card.locations.empty?
-      @card.locations.build
+    if @card.location.nil?
+      @card.build_location
     end
   end
 
@@ -61,11 +61,9 @@ class CardsController < ApplicationController
       :lat,
       :lng,
       :cover_image,
-      locations_attributes: [
+      location_attributes: [
         :id,
-        :name,
-        :lat,
-        :lng
+        :geojson
       ]
     )
   end

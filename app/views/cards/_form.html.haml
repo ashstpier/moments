@@ -3,9 +3,13 @@
     = f.input :name
     = f.input :description
     = f.input :date, as: :datepicker
-    = f.simple_fields_for :locations do |l|
-      = l.input :name
-      = l.input :lat
-      = l.input :lng
+    = f.simple_fields_for :location do |l|
+      = l.input :geojson, :as => :hidden
+
+    - if @card.location.nil?
+      #mapbuilder
+    - else
+      #mapbuilder{:data => {:geojson => @card.location.geojson}}
+
     = f.input :cover_image, :as => :cover_image
     = f.submit "save", :class => 'btn'

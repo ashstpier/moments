@@ -8,8 +8,7 @@
 
     %p= @event.description
 
-- unless @event.locations
-  #map{:data => {:lat => @event.locations.first.lat, :lng => @event.locations.first.lng, :name => @event.locations.first.name}}
+- unless @event.location.geojson.empty?
+  = render partial: 'cards/modules/map', :locals => { event: @event }
 
-.event-body
 

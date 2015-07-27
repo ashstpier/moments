@@ -1,10 +1,15 @@
 $container-width: 1140px;
+$small-container: 900px;
 $basefont: 16;
 $menu-width: 260px;
 
 $body-font: 'chaparral-pro', serif;
 $heading-font: 'futura-pt', sans-serif;
 
+$primary: #ef5b67;
+$primary-dark: desaturate(darken($primary, 8%), 10%);
+$secondary: #444A6F;
+$secondary-dark: darken($secondary, 5%);
 $black: #333;
 $grey: #555;
 $light-grey: #e8e8e8;
