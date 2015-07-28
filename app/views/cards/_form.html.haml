@@ -6,10 +6,18 @@
     = f.simple_fields_for :location do |l|
       = l.input :geojson, :as => :hidden
 
-    - if @card.location.nil?
-      #mapbuilder
-    - else
-      #mapbuilder{:data => {:geojson => @card.location.geojson}}
+    .map-wrapper
+      - if @card.location.nil?
+        #mapbuilder
+      - else
+        #mapbuilder{:data => {:geojson => @card.location.geojson}}
+      .marker-button
+        = link_to '#', class: "btn add-marker active" do
+          .fa.fa-map-marker
+          Add location
+        = link_to '#', class: "btn btn-secondary cancel-marker" do
+          .fa.fa-times-circle
+          Cancel
 
     = f.input :cover_image, :as => :cover_image
     = f.submit "save", :class => 'btn'

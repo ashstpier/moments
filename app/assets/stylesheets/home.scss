@@ -15,6 +15,14 @@
     font-weight: bold;
     font-size: em(54);
     letter-spacing: 0.1em;
+    margin: 0;
+  }
+  h2 {
+    margin: 0;
+    color: #fff;
+    // text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: em(20);
   }
   .logo {
     position: fixed;
@@ -28,9 +36,8 @@
   }
   .home-form {
     margin-top: 50px;
-    @include outer-container(480px);
+    @include outer-container(420px);
     text-align: left;
-    // color: #fff;
     background: #fff;
     padding: 10px 20px 20px;
     border-radius: 2px;

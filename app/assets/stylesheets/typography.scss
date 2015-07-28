@@ -14,7 +14,7 @@ a {
   color: $black;
 }
 
-.btn {
+.btn, button {
   border: none;
   text-decoration: none;
   padding: 12px 20px;
@@ -33,5 +33,11 @@ a {
   &:hover {
     background: $primary-dark;
     color: #fff;
+  }
+  &.btn-secondary  {
+    background: $secondary;
+    &:hover {
+      background: $secondary-dark;
+    }
   }
 }

@@ -2,11 +2,12 @@
   .home-header-content
 
     %h1 Be part of the moment
+    %h2 Create and share important moments in your life.
     .signup
       = link_to "Sign up", new_user_registration_path, class: "btn"
 
     .logo
-      moment.
+      moments.
 
     .home-form
       = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
