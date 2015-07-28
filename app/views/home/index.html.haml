@@ -1,2 +1,18 @@
-= link_to "Login", new_user_session_path, class: "btn"
-= link_to "Sign up", new_user_registration_path, class: "btn"
+#home-header
+  .home-header-content
+
+    %h1 Be part of the moment
+    .signup
+      = link_to "Sign up", new_user_registration_path, class: "btn"
+
+    .logo
+      moment.
+
+    .home-form
+      = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .form-inputs
+          = f.input :login, placeholder: 'username or email'
+          = f.input :password, required: false, placeholder: 'password'
+          = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
+        .form-actions
+          = f.button :submit, "Log in"

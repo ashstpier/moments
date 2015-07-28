@@ -1,0 +1,47 @@
+#home-header {
+  min-height: 100%;
+  display: table;
+  width: 100%;
+  background: image_url('home-header.jpeg') center center no-repeat;
+  background-size: cover;
+  .home-header-content {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }
+  h1 {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: em(54);
+    letter-spacing: 0.1em;
+  }
+  .logo {
+    position: fixed;
+    top: 15px;
+    left: 20px;
+    letter-spacing: 0.05em;
+    font-family: $heading-font;
+    font-size: em(24);
+    font-weight: bold;
+    color: #fff;
+  }
+  .home-form {
+    margin-top: 50px;
+    @include outer-container(480px);
+    text-align: left;
+    // color: #fff;
+    background: #fff;
+    padding: 10px 20px 20px;
+    border-radius: 2px;
+    .btn {
+      display: block;
+      width: 100%;
+    }
+  }
+  .signup {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+  }
+}
