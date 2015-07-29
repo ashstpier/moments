@@ -34,12 +34,12 @@
 
   &:hover {
     .card-wrapper {
-      background: rgba($secondary, 0.25);
+      background: rgba($secondary, 0.2);
     }
   }
 
   .card-wrapper {
-    background: rgba(darken($secondary, 5%), 0.4);
+    background: rgba(darken($secondary, 10%), 0.3);
     height: 100%;
     @include transition(background 250ms $ease-out);
   }

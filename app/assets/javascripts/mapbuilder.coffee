@@ -3,8 +3,8 @@ ready = ->
   return false unless $('#mapbuilder').length
 
   savedGeojson = $('#mapbuilder').data('geojson')
-  currentMarker = null
   markerId = 0
+  dummyMarker = null
 
   buildMap = ->
     L.mapbox.accessToken = 'pk.eyJ1IjoiYXNoc3AiLCJhIjoiNzc5MmY3Mjk2MGFiMjIxMzM5YzkyNzQyNzg5ODk4NDIifQ.fJ1QjDAPsonHoOTraSmoAw';
@@ -38,8 +38,10 @@ ready = ->
   toggleMarker = () ->
     $('#mapbuilder').toggleClass('addmarker')
     $('.add-marker, .cancel-marker').toggleClass('active')
+    dummyMarker = addDummyMarker()
 
   addMarker = (lat, lng) ->
+    map.removeLayer(dummyMarker)
     markerId += 1
 
     marker = L.mapbox.featureLayer({
@@ -50,13 +52,21 @@ ready = ->
       },
       properties: {
         'marker-size': 'large',
-        'marker-color': '#444A6F',
+        'marker-color': '#FF4E50',
         'markerId': markerId
       }
     }).addTo(map)
 
     createContent(marker, markerId)
-    marker.openPopup();
+
+    return marker
+
+  addDummyMarker = ->
+    dummyMarker = L.marker([0,0], {
+      icon: L.mapbox.marker.icon({
+        'marker-color': '#FF4E50'
+      })
+    }).addTo(map)
 
   createContent = (marker, id, name="") ->
     content = """<div class="map-popup" data-marker-id="#{id}">
@@ -72,11 +82,12 @@ ready = ->
   saveGeojson = ->
     fullGeojson = []
     map.eachLayer (layer) ->
-      if layer instanceof L.Marker
+      if layer instanceof L.Marker && layer.feature
         geojson = layer.feature
         fullGeojson.push(geojson)
 
     geojsonString = JSON.stringify(fullGeojson)
+    console.log geojsonString
     $('#card_location_attributes_geojson').val(geojsonString)
 
   initEvents = ->
@@ -85,9 +96,14 @@ ready = ->
       lng = e.latlng.lng
 
       if $('#mapbuilder').hasClass('addmarker')
-        addMarker(lat, lng)
+        marker = addMarker(lat, lng)
+        marker.openPopup();
         saveGeojson()
         toggleMarker()
+
+    map.on 'mousemove', (e) ->
+      if $('#mapbuilder').hasClass('addmarker')
+        dummyMarker.setLatLng(e.latlng)
 
     map.on 'locationfound', (e) ->
       map.fitBounds(e.bounds)
@@ -101,7 +117,7 @@ ready = ->
       name = e.target.value
       markerId = $(e.target).closest('.map-popup').data('marker-id')
       map.eachLayer (layer) ->
-        if layer instanceof L.Marker
+        if layer instanceof L.Marker && layer.feature
           if layer.feature.properties.markerId == markerId
             layer.feature.properties.name = name
             createContent(layer, markerId, name)
