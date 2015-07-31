@@ -7,8 +7,17 @@
     %h1= @event.name
 
     %p= @event.description
+.bg-grey
+  .event-body
+    %h2 Friends
 
 - unless @event.location.geojson.empty?
-  = render partial: 'cards/modules/map', :locals => { event: @event }
+  #map{:data => {:geojson => @event.location.geojson}}
+
+.event-body
+  %h2 Gallery
+.bg-grey
+  .event-body
+    %h2 Comments
 
 

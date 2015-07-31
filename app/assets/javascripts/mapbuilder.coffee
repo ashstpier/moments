@@ -70,7 +70,7 @@ ready = ->
 
   createContent = (marker, id, name="") ->
     content = """<div class="map-popup" data-marker-id="#{id}">
-      <label>Location:</label>
+      <label>Name:</label>
       <input type="text" class="marker-input" value="#{name}" />
       <a href="#" class="delete-marker"><i class="fa fa-times-circle"></i> delete</a>
     </div>"""
@@ -128,7 +128,7 @@ ready = ->
       e.preventDefault()
       markerId = $(e.target).closest('.map-popup').data('marker-id')
       map.eachLayer (layer) ->
-        if layer instanceof L.Marker
+        if layer instanceof L.Marker && layer.feature
           if layer.feature.properties.markerId == markerId
             layer.closePopup()
             $('.leaflet-popup').hide()

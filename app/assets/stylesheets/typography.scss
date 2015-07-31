@@ -8,6 +8,7 @@ p {
   line-height: 1.8;
   color: $black;
   font-weight: 300;
+  font-size: em(18);
 }
 
 a {
@@ -26,7 +27,7 @@ a {
   position: relative;
   cursor: pointer;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 400;
   font-size: em(14);
   letter-spacing: 0.1em;
   @include transition(all 0.2s $ease-out);

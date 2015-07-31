@@ -1,6 +1,6 @@
 .form-wrapper {
   @include outer-container($small-container);
-  padding: 100px 20px;
+  padding: 80px 20px;
 }
 input[type="text"],
 input[type="number"],
@@ -8,8 +8,8 @@ input[type="password"],
 input[type="email"],
 textarea,
 select {
-  border: 1px solid #ddd;
-  padding: 12px 10px;
+  border: 1px solid #e6e6e6;
+  padding: 15px;
   border-radius: 3px;
   outline: none;
   width: 100%;
@@ -47,4 +47,21 @@ label {
   color: #ff0000;
   padding: 10px 0 0;
   display: inline-block;
+}
+
+.card-form {
+  padding-top: 60px;
+  label {
+    font-size: em(24);
+    margin-bottom: 20px;
+    color: $grey;
+    font-weight: 300;
+  }
+}
+
+#save-button {
+  display: block;
+  margin: 80px auto 0;
+  font-size: em(18);
+  padding: 15px 50px;
 }

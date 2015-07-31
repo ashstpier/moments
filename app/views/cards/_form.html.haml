@@ -1,23 +1,31 @@
-.form-wrapper
-  = simple_form_for @card do |f|
-    = f.input :name
-    = f.input :description
-    = f.input :date, as: :datepicker
-    = f.simple_fields_for :location do |l|
-      = l.input :geojson, :as => :hidden
+= simple_form_for @card do |f|
+  .card-form
+    .form-wrapper
+      = f.input :name, placeholder: "Trip to Thailand"
+    .bg-grey
+      .form-wrapper
+        = f.input :description, placeholder: "Describe the moment..."
+    .form-wrapper
+      = f.input :date, as: :datepicker
+    .bg-grey
+      .form-wrapper
+        = f.label "Add location markers below:"
+        = f.simple_fields_for :location do |l|
+          = l.input :geojson, :as => :hidden
 
-    .map-wrapper
-      - if @card.location.nil?
-        #mapbuilder
-      - else
-        #mapbuilder{:data => {:geojson => @card.location.geojson}}
-      .marker-button
-        = link_to '#', class: "btn add-marker active" do
-          .fa.fa-map-marker
-          Add location
-        = link_to '#', class: "btn btn-secondary cancel-marker" do
-          .fa.fa-times-circle
-          Cancel
+        .map-wrapper
+          - if @card.location.nil?
+            #mapbuilder
+          - else
+            #mapbuilder{:data => {:geojson => @card.location.geojson}}
+          .marker-button
+            = link_to '#', class: "btn add-marker active" do
+              .fa.fa-map-marker
+              Add location
+            = link_to '#', class: "btn btn-secondary cancel-marker" do
+              .fa.fa-times-circle
+              Cancel
+    .form-wrapper
+      = f.input :cover_image, :as => :cover_image
 
-    = f.input :cover_image, :as => :cover_image
-    = f.submit "save", :class => 'btn'
+      = f.submit "save", {class: 'btn', id: 'save-button'}
