@@ -22,6 +22,8 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'simple_form'
 
+gem 'rails_12factor', group: :production
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-datetimepicker'
 end
